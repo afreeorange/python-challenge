@@ -1,6 +1,7 @@
 # http://www.pythonchallenge.com/pc/def/equality.html
+# Where I was stuck: needed to match aBCDeFGHi, not ABCDeFGHi
+
 import re
-import sys
 
 text = """
 kAewtloYgcFQaJNhHVGxXDiQmzjfcpYbzxlWrVcqsmUbCunkfxZWDZjUZMiGqhRRiUvGmYmvnJIHEmbT
@@ -1255,7 +1256,4 @@ KfErkDaWMFZZeuqDmXKJEGHyToPUhPphfVhgUZgbIuRAtWnroImpJKqqmEZqeNQCKzhjIkKQHURWLXFw
 PBuijeoTSpsVLaOGuLVjMZXkBvVXwUuHfBihziiavGSYofPNeKsTXruMUumRRPQJzvSzJkKbtSipiqBd
 """
 
-for match in re.findall(r"[A-Z]{3}([a-z])[A-Z]{3}", text):
-    sys.stdout.write(match)
-
-print ''
+print ''.join(re.findall(r'[^A-Z]+[A-Z]{3}([a-z])[A-Z]{3}[^A-Z]+', text))
