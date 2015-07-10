@@ -1,10 +1,14 @@
+# coding: utf-8
+
 # http://www.pythonchallenge.com/pc/def/peak.html
-from time import sleep
-import sys
+# "Peak Hill" = pickle, not pkill... :|
 
-with open('5.banner.p') as f:
-    banner = [_.strip() for _ in f.readlines()]
+import pickle
 
-# while True:
-#     for _ in banner:
-#         sys.stdout.write(_)
+pickled_banner = open('5.banner.p', 'r')
+
+p = pickle.load(pickled_banner)
+
+for _ in p:
+    print ''.join(char * count for char, count in _)
+

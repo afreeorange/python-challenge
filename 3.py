@@ -1,3 +1,5 @@
+# coding: utf-8
+
 # http://www.pythonchallenge.com/pc/def/equality.html
 # Where I was stuck: needed to match aBCDeFGHi, not ABCDeFGHi
 
